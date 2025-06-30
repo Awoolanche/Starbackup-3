@@ -1,6 +1,5 @@
 ![Starbackup_title](https://github.com/user-attachments/assets/9a104ce1-1130-4409-86fa-7cb774973162)
-Starbackup 3 is a simple backup tool for the game Starbound. It provides basic backup automation and archiving.
-
+Starbackup 3 is a simple backup tool for the game Starbound. It provides basic backup automation and archivization.
 # Features
 
 ### Backup your files easily
