@@ -8,7 +8,17 @@ Every backup creates a ZIP archive (named with the current date) with your ```st
 ### Automate your backups 
 The Settings window contains options for creating a backup automatically when the tool is opened, closing the tool when the backup is successfully created and launching the game when it finishes, allowing for smoother user experience.
 ### Uh... what else?
-Not much, really. It's a simple tool and it's not meant to be complex and feature-heavy. More features, like modernized UI, timed backup frequency or backup manager are planned for future releases.
+Not much, really. It's a simple tool and it's not meant to be complex and feature-heavy. More features listed below are planned for future releases.
+
+
+### Planned
+* Reading Steam Workshop mod titles from the page instead of unreliable .modinfo,
+* More Starbound-like interface,
+* Timed backups; backups will only be performed once in a time period specified by the user,
+* Backup limit; size or quantity, also speficied by the user,
+* Backup manager; listing and restoring backups from the inside the tool,
+* Hanging furry dice air freshener.
+
 
 # Installation
 Download the latest release [here](https://github.com/Awoolanche/Starbackup-3/releases), unpack and open ```Starbackup 3.exe``` to run the application.
