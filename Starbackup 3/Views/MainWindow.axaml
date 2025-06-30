@@ -1,0 +1,90 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Starbackup_3.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:converters="using:Starbackup_3.Services"
+        mc:Ignorable="d"
+        x:Class="Starbackup_3.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/Starbackup_logo256.ico"
+        Title="Starbackup 3"
+        Opened="Window_Opened"
+        Width="600"
+        Height="450"
+        MinWidth="600"
+        MinHeight="450">
+	<Design.DataContext>
+		<vm:MainWindowViewModel />
+	</Design.DataContext>
+
+	<Window.Resources>
+		<converters:LogLevelToBrushConverter x:Key="LogLevelToBrushConverter" />
+	</Window.Resources>
+
+	<Grid RowDefinitions="Auto,*,Auto" Margin="20">
+		<Button Grid.Row="0"
+                Content="Settings"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Margin="0,0,0,10"
+                Command="{Binding OpenSettingsCommand}"
+                CommandParameter="{Binding $parent[Window]}"/>
+
+		<StackPanel Grid.Row="1"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Spacing="10">
+
+			<Button Content="Create Backup"
+                    Command="{Binding BackupCommand}"
+                    HorizontalAlignment="Center"
+                    FontSize="16"
+                    Padding="30,10"/>
+
+			<TextBlock Text="{Binding BackupStatus}"
+                       HorizontalAlignment="Center"
+                       TextWrapping="Wrap"/>
+		</StackPanel>
+
+		<Border Grid.Row="2"
+                BorderThickness="1"
+                BorderBrush="Gray"
+                Margin="0,10,0,0"
+                IsVisible="{Binding IsLogVisible}">
+			<Expander IsExpanded="{Binding IsLogExpanded}"
+                      HorizontalAlignment="Stretch">
+				<Expander.Header>
+					<TextBlock Text="Backup Log" FontWeight="Bold" FontSize="14" VerticalAlignment="Center" Margin="10,5"/>
+				</Expander.Header>
+				<Expander.Content>
+					<Grid RowDefinitions="*,Auto">
+						<ScrollViewer Grid.Row="0"
+                                      Height="120"
+                                      VerticalScrollBarVisibility="Auto"
+                                      HorizontalScrollBarVisibility="Auto"
+                                      Name="LogScrollViewer"
+                                      Padding="10,-15,10,5">
+							<ItemsControl ItemsSource="{Binding LogEntries}"
+                                          VerticalAlignment="Bottom">
+								<ItemsControl.ItemTemplate>
+									<DataTemplate>
+										<TextBlock Text="{Binding FormattedMessage}"
+                                                   Foreground="{Binding Level, Converter={StaticResource LogLevelToBrushConverter}}"
+                                                   FontSize="12"/>
+									</DataTemplate>
+								</ItemsControl.ItemTemplate>
+							</ItemsControl>
+						</ScrollViewer>
+						<Button Grid.Row="1"
+                                Content="Clear Log"
+                                Command="{Binding ClearLogCommand}"
+                                HorizontalAlignment="Right"
+                                Margin="0,0,-10,-10"
+                                Padding="5,2"/>
+					</Grid>
+				</Expander.Content>
+			</Expander>
+		</Border>
+	</Grid>
+</Window>
