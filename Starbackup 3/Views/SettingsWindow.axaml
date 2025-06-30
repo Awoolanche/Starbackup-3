@@ -6,6 +6,7 @@
         mc:Ignorable="d"
         x:Class="Starbackup_3.Views.SettingsWindow"
         x:DataType="vm:MainWindowViewModel"
+		Icon="/Assets/Starbackup_logo.ico"
         Title="Starbackup 3 - Settings"
         Width="450"
         SizeToContent="Height"

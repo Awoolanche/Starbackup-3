@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         x:Class="Starbackup_3.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
-        Icon="/Assets/Starbackup_logo256.ico"
+        Icon="/Assets/Starbackup_logo.ico"
         Title="Starbackup 3"
         Opened="Window_Opened"
         Width="600"
