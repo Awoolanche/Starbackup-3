@@ -11,7 +11,7 @@ The Settings window contains options for creating a backup automatically when th
 Not much, really. It's a simple tool and it's not meant to be complex and feature-heavy. More features, like modernized UI, timed backup frequency or backup manager are planned for future releases.
 
 # Installation
-Uh
+Download the latest release [here](https://github.com/Awoolanche/Starbackup-3/releases), unpack and open ```Starbackup 3.exe``` to run the application.
 
 # How to Use
 ### Set Starbound Root Folder
